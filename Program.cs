@@ -7,7 +7,7 @@ using System.Threading;
 using System.IO;
 using System.Net;
 
-namespace timer1
+namespace Demography
 {
     class Gender
     {
