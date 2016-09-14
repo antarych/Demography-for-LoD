@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,15 +40,11 @@ namespace Demography
             string data = reader.ReadToEnd();
             MyStream.Close();
             reader.Close();
-            if (data == null) Console.WriteLine("no changes");
-            else
-            //Console.Write("{0}\n", data);
             try
             {
                 string[] person = (data.Trim(new Char[] { '"' })).Split(new Char[] { ';' });
                 foreach (string x in person)
                 {
-                    //Console.WriteLine(x);
                     string[] st = x.Split(new Char[] { ':' });
                     if (st[0] == "Male")
                         {
@@ -62,13 +58,10 @@ namespace Demography
                         }
                     }
                     Console.Clear();
-                Console.Write("{0}: {1}; {2}: {3}", "Male", Gender.male.ToString("+#;-#;0"), "Female", Gender.female.ToString("+#;-#;0"));
-                    //Console.Write("{0}: {1}\n {2}: {3}", "Male", Gender.male.ToString("+#;-#;0"), "Female", Gender.female.ToString("+#;-#;0"));
+                Console.Write("{0}: {1}; {2}: {3}", "Male", Gender.male.ToString("+#;-#;0"), "Female", Gender.female.ToString("+#;-#;0"));                   
                 }
             catch (Exception)
             {
-                    //Console.WriteLine("No changes");
-                    //Console.Write("{0}: {1}\n {2}: {3}", "Male", Gender.male.ToString("+#;-#;0"), "Female", Gender.female.ToString("+#;-#;0"));
                     Console.Clear();
                     Console.Write("{0}: {1}; {2}: {3}", "Male", Gender.male.ToString("+#;-#;0"), "Female", Gender.female.ToString("+#;-#;0"));
             }
